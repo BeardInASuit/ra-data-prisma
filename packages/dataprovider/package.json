@@ -21,11 +21,11 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "yarn generate:test && yarn build:cjs && yarn build:es",
+    "build": "yarn build:cjs && yarn build:es",
     "build:cjs": "rimraf ./lib && tsc --project tsconfig.json --outDir lib --module commonjs",
     "build:es": "rimraf ./lib-es && tsc --project tsconfig.json",
     "generate:test": "yarn generate:test:prisma && yarn generate:test:nexus",
-    "generate:test:prisma": "SKIP_PRISMA_VERSION_CHECK=1 yarn prisma generate --schema test-data/datamodel.prisma",
+    "generate:test:prisma": "yarn prisma generate --schema test-data/datamodel.prisma",
     "generate:test:nexus": "yarn ts-node --project ../../tsconfig-test.json  --transpile-only test-data/buildTestSchemaNexus.ts"
   },
   "devDependencies": {
@@ -47,6 +47,6 @@
     "graphql": ">=14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-admin": "*"
+    "react-admin": "^4.16.14"
   }
 }
