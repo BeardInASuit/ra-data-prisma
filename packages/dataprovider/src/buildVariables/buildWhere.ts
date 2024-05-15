@@ -435,15 +435,21 @@ const getFilters = (
       );
 
       if(hasIsFilter){
-        return {
-          [originalKey]: {
-            is: {
-              id: {
-                equals: value,
+        if(value === null){
+          return {
+            [originalKey]: null,
+          };
+        }else{
+          return {
+            [originalKey]: {
+              is: {
+                id: {
+                  equals: value,
+                },
               },
             },
-          },
-        };
+          };
+        }
       }
 
       const hasIsNotFilter = inputObjectType.inputFields.some(
@@ -492,15 +498,21 @@ const getFilters = (
       );
 
       if(hasIsFilter){
-        return {
-          [originalKey]: {
-            is: {
-              id: {
-                equals: value,
+        if(value === null){
+          return {
+            [originalKey]: null,
+          };
+        }else{
+          return {
+            [originalKey]: {
+              is: {
+                id: {
+                  equals: value,
+                },
               },
             },
-          },
-        };
+          };
+        }
       }
 
       const hasIsNotFilter = inputObjectType.inputFields.some(
