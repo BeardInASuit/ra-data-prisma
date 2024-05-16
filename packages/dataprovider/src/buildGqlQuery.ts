@@ -369,7 +369,7 @@ export default (
     if (aorFetchType === DELETE) {
       return gqlTypes.document([
         gqlTypes.operationDefinition(
-          OperationTypeNode.QUERY,
+          OperationTypeNode.MUTATION,
           gqlTypes.selectionSet([
             gqlTypes.field(gqlTypes.name(queryType.name!), {
               alias: gqlTypes.name("data"),
